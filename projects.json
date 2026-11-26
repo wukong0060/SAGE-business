@@ -1,0 +1,86 @@
+{
+  "owner": "wukong0060",
+  "note": "Catalog assembled from projects visible in the saved conversation context and recent chats. Existing repositories are listed separately so the factory does not recreate them.",
+  "existing_repositories": [
+    {
+      "name": "S.A.G.E",
+      "url": "https://github.com/wukong0060/S.A.G.E",
+      "purpose": "Core personal AI assistant and orchestration system"
+    },
+    {
+      "name": "SAGE-business",
+      "url": "https://github.com/wukong0060/SAGE-business",
+      "purpose": "SAGE business and project hub; hosts this project factory"
+    },
+    {
+      "name": "SAGE-OS-",
+      "url": "https://github.com/wukong0060/SAGE-OS-",
+      "purpose": "Windows performance and PC optimization project"
+    },
+    {
+      "name": "SAGE-Droid",
+      "url": "https://github.com/wukong0060/SAGE-Droid",
+      "purpose": "Android assistant and device optimization project"
+    },
+    {
+      "name": "SAGE-Brawlhalla-Trainer",
+      "url": "https://github.com/wukong0060/SAGE-Brawlhalla-Trainer",
+      "purpose": "SAGE FORGE / Brawlhalla AI training and coaching project"
+    },
+    {
+      "name": "Base-SAGE",
+      "url": "https://github.com/wukong0060/Base-SAGE",
+      "purpose": "Base44-style app builder / platform concept"
+    }
+  ],
+  "projects": [
+    {
+      "name": "SAGE-EventKit",
+      "description": "Premium one-time-purchase web toolkit for creating and managing event materials.",
+      "create": true,
+      "readme": "# SAGE EventKit\n\nA premium web application for creating polished event materials and deliverables with a one-time purchase model for buyers.\n\n## Product direction\n- Serve individual customers and businesses\n- Premium, practical templates and event workflows\n- One-time purchase and activation, with no buyer subscription\n- Secure purchase verification and license activation\n\n## Status\nProduct strategy and implementation specification stage."
+    },
+    {
+      "name": "SAGE-Mail-Intelligence",
+      "description": "SAGE email intelligence: read-only Gmail analysis, project monitoring, summaries, and approval-gated drafts.",
+      "create": true,
+      "readme": "# SAGE Mail Intelligence\n\nAn email intelligence module for the SAGE ecosystem.\n\n## Initial scope\n- Read-only Gmail access for search and retrieval\n- Project-related email classification and monitoring\n- Thread summaries and action extraction\n- Draft generation only; sending remains a separate user-approved action\n- No automatic sending or destructive mailbox actions\n\n## Security\nUse least-privilege access, keep credentials out of source control, and require explicit approval before external actions."
+    },
+    {
+      "name": "SAGE-Leveling-to-the-West",
+      "description": "Gamified martial arts and fitness progression app with training plans, skill tracking, and animation concepts.",
+      "create": true,
+      "readme": "# SAGE: Leveling to the West\n\nA gamified training and progression application themed around martial arts, movement skills, and personal development.\n\n## Planned areas\n- Training session logging and progression\n- Martial arts skill paths and fundamentals\n- Mobility, strength, conditioning, and recovery tracking\n- Achievement systems and visual progression\n- Clear safety guidance and adaptable training levels\n\n## Status\nConcept and product planning."
+    },
+    {
+      "name": "BBR-X",
+      "description": "Beach Buggy Racing enhancement concept covering Windows delivery, ranked play, and expanded multiplayer systems.",
+      "create": true,
+      "readme": "# BBR-X\n\nA fan project concept exploring a broader Beach Buggy Racing experience.\n\n## Planned research areas\n- Windows platform and delivery options\n- Ranked and competitive systems\n- Multiplayer architecture concepts\n- User interface and progression improvements\n\n## Scope note\nThis repository is for original code, documentation, and research. Do not commit proprietary game assets or copyrighted source code without permission."
+    },
+    {
+      "name": "NEXUS-Gaming-Platform",
+      "description": "Gaming platform concept combining PC optimization, a unified game library, and launcher-style experiences.",
+      "create": true,
+      "readme": "# NEXUS Gaming Platform\n\nA gaming ecosystem concept combining PC performance tools with a unified library and launcher-style experience.\n\n## Planned areas\n- Game library and launcher UX\n- PC performance diagnostics and safe optimization profiles\n- Game discovery and library organization\n- Modular architecture and update system\n\n## Status\nConcept and architecture planning."
+    },
+    {
+      "name": "SAGE-Gaming-Network-NG",
+      "description": "Nigeria-focused virtual gaming network and connectivity service concept.",
+      "create": true,
+      "readme": "# SAGE Gaming Network NG\n\nA Nigeria-focused concept for improving gaming connectivity and the digital gaming experience.\n\n## Planned research areas\n- User and market research in Nigeria\n- Connectivity and service architecture options\n- Latency measurement and network diagnostics\n- Pricing, partnerships, and operational feasibility\n\n## Status\nEarly concept research. Do not represent proposed capabilities as an operational telecom service."
+    },
+    {
+      "name": "Altair-AC-Modding-Lab",
+      "description": "Research and tooling for modding the original Assassin's Creed game and building an engine-aware modding workflow.",
+      "create": true,
+      "readme": "# Altair AC Modding Lab\n\nA fan modding research project focused on extending the original Assassin's Creed experience using the original game's engine and available modding interfaces.\n\n## Planned areas\n- File and asset format research\n- Mod packaging and compatibility tooling\n- Configuration and runtime behavior documentation\n- A custom workflow for organizing and testing mods\n\n## Scope note\nThis is a modding project, not a claim to own or recreate Ubisoft technology. Keep proprietary assets and game binaries out of this repository; use lawful local game installations and original project files."
+    },
+    {
+      "name": "SAGE-Barber-Template-Studio",
+      "description": "Digital product studio for practical barbering templates, client materials, and one-time-purchase downloads.",
+      "create": true,
+      "readme": "# SAGE Barber Template Studio\n\nA small digital product project focused on useful, polished resources for barbers and barbershops.\n\n## Planned products\n- Client consultation and preference forms\n- Appointment and shop workflow templates\n- Service menus and price-list layouts\n- Social media and promotion templates\n- Downloadable bundles with one-time purchases\n\n## Status\nProduct research and template planning."
+    }
+  ]
+}
