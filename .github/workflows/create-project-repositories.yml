@@ -31,9 +31,9 @@ jobs:
       - name: Create missing repositories
         shell: bash
         env:
-          GH_TOKEN: \${{ secrets.SAGE_REPO_CREATOR_TOKEN }}
-          CONFIRMATION: \${{ inputs.confirmation }}
-          VISIBILITY: \${{ inputs.visibility }}
+          GH_TOKEN: ${{ secrets.SAGE_REPO_CREATOR_TOKEN }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+          VISIBILITY: ${{ inputs.visibility }}
         run: |
           set -euo pipefail
 
@@ -42,7 +42,7 @@ jobs:
             exit 1
           fi
 
-          if [[ -z "\${GH_TOKEN:-}" ]]; then
+          if [[ -z "${GH_TOKEN:-}" ]]; then
             echo "::error::Missing repository secret SAGE_REPO_CREATOR_TOKEN."
             exit 1
           fi
@@ -65,8 +65,8 @@ jobs:
 
           echo "## SAGE repository creation" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Owner: \`$owner\`  " >> "$GITHUB_STEP_SUMMARY"
-          echo "Visibility: \`$VISIBILITY\`  " >> "$GITHUB_STEP_SUMMARY"
+          echo "Owner: `$owner`  " >> "$GITHUB_STEP_SUMMARY"
+          echo "Visibility: `$VISIBILITY`  " >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "| Repository | Result |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
