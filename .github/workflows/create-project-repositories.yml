@@ -1,0 +1,108 @@
+name: Create SAGE project repositories
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type CREATE to confirm repository creation
+        required: true
+        type: string
+      visibility:
+        description: Visibility for every new repository
+        required: true
+        type: choice
+        options:
+          - private
+          - public
+        default: private
+
+permissions:
+  contents: read
+
+jobs:
+  create-project-repositories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project catalog
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Create missing repositories
+        shell: bash
+        env:
+          GH_TOKEN: \${{ secrets.SAGE_REPO_CREATOR_TOKEN }}
+          CONFIRMATION: \${{ inputs.confirmation }}
+          VISIBILITY: \${{ inputs.visibility }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$CONFIRMATION" != "CREATE" ]]; then
+            echo "::error::Confirmation must be exactly CREATE."
+            exit 1
+          fi
+
+          if [[ -z "\${GH_TOKEN:-}" ]]; then
+            echo "::error::Missing repository secret SAGE_REPO_CREATOR_TOKEN."
+            exit 1
+          fi
+
+          if [[ "$VISIBILITY" != "private" && "$VISIBILITY" != "public" ]]; then
+            echo "::error::Visibility must be private or public."
+            exit 1
+          fi
+
+          owner="$(gh api user --jq .login)"
+          if [[ "$owner" != "wukong0060" ]]; then
+            echo "::error::This project catalog is configured for wukong0060, but the token belongs to $owner."
+            exit 1
+          fi
+
+          private_flag=true
+          if [[ "$VISIBILITY" == "public" ]]; then
+            private_flag=false
+          fi
+
+          echo "## SAGE repository creation" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Owner: \`$owner\`  " >> "$GITHUB_STEP_SUMMARY"
+          echo "Visibility: \`$VISIBILITY\`  " >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Repository | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+
+          while IFS= read -r project; do
+            name="$(jq -r '.name' <<< "$project")"
+            description="$(jq -r '.description' <<< "$project")"
+            readme="$(jq -r '.readme' <<< "$project")"
+            url="https://github.com/$owner/$name"
+
+            if gh api "repos/$owner/$name" >/dev/null 2>&1; then
+              echo "Skipping existing repository: $url"
+              echo "| [$name]($url) | Already existed; skipped |" >> "$GITHUB_STEP_SUMMARY"
+              continue
+            fi
+
+            echo "Creating $url"
+            created_repo="$(gh api --method POST /user/repos \
+              -f name="$name" \
+              -f description="$description" \
+              -F private="$private_flag" \
+              -F auto_init=true)"
+
+            branch="$(jq -r '.default_branch // "main"' <<< "$created_repo")"
+            readme_sha="$(gh api "repos/$owner/$name/contents/README.md" --jq .sha)"
+            readme_b64="$(printf '%s' "$readme" | base64 -w 0)"
+
+            gh api --method PUT "repos/$owner/$name/contents/README.md" \
+              -f message="Add project overview" \
+              -f content="$readme_b64" \
+              -f sha="$readme_sha" \
+              -f branch="$branch" >/dev/null
+
+            echo "Created $url"
+            echo "| [$name]($url) | Created |" >> "$GITHUB_STEP_SUMMARY"
+          done < <(jq -c '.projects[] | select(.create == true)' projects.json)
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Existing repositories listed in projects.json were not modified." >> "$GITHUB_STEP_SUMMARY"
