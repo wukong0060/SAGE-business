@@ -1,193 +1,133 @@
 {
   "owner": "wukong0060",
-  "policy": "Use the six existing repositories only. Do not create additional repositories for project ideas. Planned projects belong in the SAGE-business planning index until they are assigned to an existing codebase.",
-  "last_reviewed": "2026-11-26",
-  "repositories": [
+  "repository_policy": "Keep all existing repositories. Create one separate repository for each distinct planned project listed under planned_repositories. Do not create repositories for modules already assigned to an existing product unless separately listed.",
+  "scope_note": "Compiled from retained ChatGPT project context and recent conversations; may not include every idea from older conversations that is no longer available in retained context.",
+  "existing_repositories": [
     {
       "name": "S.A.G.E",
       "url": "https://github.com/wukong0060/S.A.G.E",
       "visibility": "private",
-      "role": "Core AI platform",
-      "current_contents": "Personal AI runtime with event bus, orchestration, SQLite memory, keyword skill routing, OpenAI gateway, local HTTP API, and a permission/audit layer.",
-      "home_for": [
-        "SAGE core assistant",
-        "SAGE Mail Intelligence integration",
-        "future SAGE voice, perception, HUD, and skills"
-      ]
+      "purpose": "Core personal AI runtime, orchestration, memory, skill routing, LLM gateway, API, and permission/audit system."
     },
     {
       "name": "SAGE-business",
       "url": "https://github.com/wukong0060/SAGE-business",
       "visibility": "public",
-      "role": "Business, product planning, and master index",
-      "current_contents": "SAGE business hub and this portfolio index.",
-      "home_for": [
-        "SAGE Master Project Index",
-        "EventKit product planning",
-        "lead-generation product concepts",
-        "barbering digital templates",
-        "Leveling to the West planning",
-        "BBR-X planning",
-        "NEXUS planning",
-        "Nigeria gaming network planning",
-        "Assassin's Creed modding research/planning"
-      ]
+      "purpose": "Business hub, master portfolio index, cross-project specifications, and project planning."
     },
     {
       "name": "SAGE-OS-",
       "url": "https://github.com/wukong0060/SAGE-OS-",
       "visibility": "public",
-      "role": "Windows optimization and customization",
-      "current_contents": "SAGE OS Windows optimization/customization project. README documents v3.6.4 Customization Studio and its validation caveats.",
-      "home_for": [
-        "SAGE OS",
-        "Windows gaming/performance optimization",
-        "PC diagnostics and safe tuning modules"
-      ]
+      "purpose": "Windows optimization, customization, diagnostics, and gaming-performance toolkit."
     },
     {
       "name": "SAGE-Droid",
       "url": "https://github.com/wukong0060/SAGE-Droid",
       "visibility": "private",
-      "role": "Android platform",
-      "current_contents": "Android-focused SAGE project; current README is minimal.",
-      "home_for": [
-        "SAGE Droid",
-        "Termux Companion integration",
-        "Android device tools and optimization modules"
-      ]
+      "purpose": "Android SAGE platform, Termux Companion, diagnostics, and Android modules."
     },
     {
       "name": "SAGE-Brawlhalla-Trainer",
       "url": "https://github.com/wukong0060/SAGE-Brawlhalla-Trainer",
       "visibility": "private",
-      "role": "Brawlhalla player development and coaching",
-      "current_contents": "SAGE FORGE staged source import v9.5.2 with Windows bootstrap, replay/research documentation, and prompt audit. README explicitly says full 576-file application source is not yet in this branch.",
-      "home_for": [
-        "SAGE FORGE",
-        "Brawlhalla trainer",
-        "replay analysis",
-        "fundamentals and pro coaching systems",
-        "training labs and AI coach research"
-      ]
+      "purpose": "SAGE FORGE Brawlhalla trainer, replay review, coaching, training labs, and analytics."
     },
     {
       "name": "Base-SAGE",
       "url": "https://github.com/wukong0060/Base-SAGE",
       "visibility": "public",
-      "role": "AI app-builder platform",
-      "current_contents": "Base-SAGE repository currently has a minimal README.",
-      "home_for": [
-        "Base-SAGE",
-        "Base44-style / no-code AI app builder competitor"
-      ]
+      "purpose": "Base44-style AI/no-code app-builder platform concept."
     }
   ],
-  "project_tracks": [
+  "planned_repositories": [
     {
-      "name": "S.A.G.E Core Assistant",
-      "home_repository": "S.A.G.E",
-      "type": "existing_codebase",
-      "status": "active",
-      "description": "Personal AI operating system with orchestration, skills, persistent memory, LLM gateway, local API, and permission/audit controls."
+      "name": "SAGE-Mail-Intelligence",
+      "description": "Email intelligence for the SAGE ecosystem: Gmail analysis, project monitoring, summaries, and approval-gated drafts.",
+      "category": "AI assistant module",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-Mail-Intelligence\n\nA dedicated email-intelligence project in the SAGE ecosystem.\n\n## Initial scope\n- Read-only Gmail search and retrieval\n- Project email classification and monitoring\n- Thread summaries and action-item extraction\n- Draft generation for human review\n- Sending remains an explicit, separately approved action\n\n## Security\n- Keep credentials and tokens out of Git\n- Use least-privilege permissions\n- Do not auto-send messages\n- Maintain audit trails for external actions\n\n## Status\nPlanned project; integration with S.A.G.E will be tracked here.\n"
     },
     {
-      "name": "SAGE Mail Intelligence",
-      "home_repository": "S.A.G.E",
-      "type": "planned_module",
-      "status": "planned",
-      "description": "Gmail search and read-only intelligence, project monitoring, thread summaries, and draft generation. Sending remains approval-gated; no separate repository."
+      "name": "SAGE-EventKit",
+      "description": "Premium event toolkit web application for one-time purchases, secure activation, and reusable event deliverables.",
+      "category": "Commercial web application",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-EventKit\n\nA premium web application for creating useful event materials and managing event workflows.\n\n## Product direction\n- Individuals and business customers\n- Premium templates and reusable event deliverables\n- One-time purchase for buyers, not a buyer subscription\n- Secure purchase verification and license activation\n\n## Planned work\n- Requirements and user journeys\n- Data model and access rules\n- Payment verification and activation\n- Export and delivery workflows\n- Launch and support documentation\n\n## Status\nProduct strategy and implementation specification stage.\n"
     },
     {
-      "name": "SAGE Droid and Termux Companion",
-      "home_repository": "SAGE-Droid",
-      "type": "existing_codebase",
-      "status": "active_development",
-      "description": "Android SAGE platform, Termux companion, device diagnostics, and modular Android tooling."
+      "name": "SAGE-Lead-Gen-Studio",
+      "description": "Standalone lead-generation products and business tools designed for useful delivery and one-time sales.",
+      "category": "Commercial software",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-Lead-Gen-Studio\n\nA collection of focused lead-generation software products for small businesses and service providers.\n\n## Product principles\n- Solve a concrete customer-acquisition problem\n- Use transparent, authorized data sources\n- Avoid spam, deceptive scraping, and unauthorized access\n- Prefer useful exports, qualification workflows, and customer-managed outreach\n- Evaluate one-time purchase delivery where suitable\n\n## Status\nConcept and product discovery. Define each product before implementation.\n"
     },
     {
-      "name": "SAGE OS",
-      "home_repository": "SAGE-OS-",
-      "type": "existing_codebase",
-      "status": "active_development",
-      "description": "Windows optimization, customization, gaming performance, and system-management toolkit."
+      "name": "SAGE-Barber-Template-Studio",
+      "description": "Barbering consultation forms, shop workflows, service menus, price lists, and marketing templates.",
+      "category": "Digital products",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-Barber-Template-Studio\n\nA digital-product project for barbers and barbershops.\n\n## Planned products\n- Client consultation and preference forms\n- Appointment and shop workflow templates\n- Service menus and price-list layouts\n- Social media and promotion templates\n- Downloadable template bundles\n\n## Status\nProduct research and template planning.\n"
     },
     {
-      "name": "SAGE FORGE / Brawlhalla Trainer",
-      "home_repository": "SAGE-Brawlhalla-Trainer",
-      "type": "existing_codebase",
-      "status": "active_development",
-      "description": "Local-first Brawlhalla player-development workspace with replay review, coaching, training labs, analytics, and AI coach research."
+      "name": "SAGE-Leveling-to-the-West",
+      "description": "Gamified martial arts and fitness progression app with skill paths, training logs, mobility, conditioning, and recovery tracking.",
+      "category": "Fitness and training application",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-Leveling-to-the-West\n\nA gamified training and personal-development application centered on martial arts fundamentals, movement skills, and sustainable progress.\n\n## Planned areas\n- Skill paths and training progression\n- Session logging and achievement systems\n- Martial arts fundamentals and technique study\n- Strength, conditioning, mobility, and recovery tracking\n- Adaptable training levels and safety guidance\n- Animated feedback and progression visualizations\n\n## Design principle\nReward consistency, skill quality, recovery, and safe progression rather than extreme training volume.\n\n## Status\nConcept and product planning.\n"
     },
     {
-      "name": "Base-SAGE App Builder",
-      "home_repository": "Base-SAGE",
-      "type": "existing_codebase",
-      "status": "early_stage",
-      "description": "Base44-style AI app builder/platform concept and implementation."
+      "name": "NOMSHU-DO",
+      "description": "Martial arts learning framework and personal training curriculum documenting fundamentals, principles, progression, and safe practice.",
+      "category": "Martial arts curriculum",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# NOMSHU-DO\n\nA martial arts learning framework and personal training curriculum.\n\n## Planned documentation\n- Training philosophy and principles\n- Fundamental movement and coordination\n- Mobility, conditioning, and recovery\n- Technical learning pathways\n- Skill assessment and progression criteria\n- Safe practice boundaries and qualified instruction requirements\n\n## Relationship to SAGE Leveling to the West\nNOMSHU-DO documents the training framework. SAGE Leveling to the West is the planned software experience that may present and track parts of that framework.\n\n## Status\nConcept documentation.\n"
     },
     {
-      "name": "SAGE EventKit",
-      "home_repository": "SAGE-business",
-      "type": "planned_product",
-      "status": "specification_stage",
-      "description": "Premium web event toolkit intended for one-time customer purchase, with purchase verification and activation. Tracked here; no new repository."
-    },
-    {
-      "name": "SAGE Lead Generation Tools",
-      "home_repository": "SAGE-business",
-      "type": "planned_product",
-      "status": "idea_backlog",
-      "description": "Small, sellable lead-generation tools and one-time-purchase digital products."
-    },
-    {
-      "name": "SAGE Barber Template Studio",
-      "home_repository": "SAGE-business",
-      "type": "planned_product",
-      "status": "idea_backlog",
-      "description": "Barber consultation forms, booking/workflow sheets, service menus, price lists, and marketing templates."
-    },
-    {
-      "name": "SAGE Leveling to the West",
-      "home_repository": "SAGE-business",
-      "type": "planned_app",
-      "status": "concept_stage",
-      "description": "Gamified martial-arts and fitness progression app with training paths, skill tracking, animations, mobility, conditioning, and recovery guidance."
+      "name": "BLAZEFORCE-Training-System",
+      "description": "Safe conditioning and athletic-development concept focused on fitness tracking, controlled progression, and recovery.",
+      "category": "Training concept",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# BLAZEFORCE-Training-System\n\nA training-concept project for documenting athletic development, conditioning, and sustainable performance.\n\n## Planned areas\n- Strength and general conditioning\n- Speed, coordination, and agility development\n- Mobility and flexibility work\n- Recovery and workload tracking\n- Clear intensity scaling and rest guidance\n\n## Safety principle\nNo overheating, dehydration, or extreme exertion targets. Progress is measured through consistent, appropriately scaled training and recovery.\n\n## Status\nConcept and research.\n"
     },
     {
       "name": "BBR-X",
-      "home_repository": "SAGE-business",
-      "type": "planned_game_project",
-      "status": "research_stage",
-      "description": "Beach Buggy Racing enhancement concept spanning Windows delivery, ranked play, and expanded multiplayer. Keep proprietary game assets and code out of the repository."
+      "description": "Beach Buggy Racing enhancement concept covering Windows delivery, competitive progression, and expanded multiplayer design research.",
+      "category": "Game technology project",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# BBR-X\n\nA game-technology and design research project exploring a broader Beach Buggy Racing experience.\n\n## Planned research\n- Windows platform and distribution options\n- Ranked and competitive systems\n- Multiplayer architecture concepts\n- Interface, progression, and player experience\n- Compatibility and technical feasibility\n\n## Project boundaries\nKeep proprietary game source code, binaries, and assets out of this repository unless use is explicitly authorized. Store original code, designs, and documentation here.\n\n## Status\nConcept and technical research.\n"
     },
     {
-      "name": "NEXUS Gaming Platform",
-      "home_repository": "SAGE-business",
-      "type": "planned_platform",
-      "status": "concept_stage",
-      "description": "Gaming launcher/library ecosystem with PC performance tools and platform features."
+      "name": "NEXUS-Gaming-Platform",
+      "description": "Gaming ecosystem concept combining a unified game library, launcher-style experience, and PC performance tooling.",
+      "category": "Gaming platform",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# NEXUS-Gaming-Platform\n\nA gaming ecosystem concept combining a game library and launcher experience with PC performance and system tools.\n\n## Planned areas\n- Unified game library and launcher UX\n- Game organization and discovery\n- PC diagnostics and safe optimization profiles\n- Modular architecture and update system\n- Account, settings, and data-management design\n\n## Status\nConcept and architecture planning.\n"
     },
     {
-      "name": "SAGE Gaming Network NG",
-      "home_repository": "SAGE-business",
-      "type": "planned_business_project",
-      "status": "research_stage",
-      "description": "Nigeria-focused gaming connectivity and network-service concept; market, technical, partnership, and feasibility research."
+      "name": "SAGE-Gaming-Network-NG",
+      "description": "Nigeria-focused gaming connectivity and network-service concept covering latency measurement, market research, and technical feasibility.",
+      "category": "Connectivity and business concept",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# SAGE-Gaming-Network-NG\n\nA Nigeria-focused gaming-connectivity concept.\n\n## Planned research\n- Player and market research in Nigeria\n- Connectivity and service architecture options\n- Latency measurement and network diagnostics\n- Infrastructure and partnership feasibility\n- Pricing and operational models\n\n## Status\nEarly research. This repository does not represent an operational telecom service.\n"
     },
     {
-      "name": "Altair / Assassin's Creed Modding Lab",
-      "home_repository": "SAGE-business",
-      "type": "planned_modding_project",
-      "status": "research_stage",
-      "description": "Research and planning for modding the original Assassin's Creed using the original game's available engine and modding interfaces. Keep proprietary game binaries/assets out of GitHub."
-    },
-    {
-      "name": "SAGE Digital Business Portfolio",
-      "home_repository": "SAGE-business",
-      "type": "business_program",
-      "status": "ongoing",
-      "description": "Umbrella for one-time-purchase software, templates, lead-generation tools, and other SAGE commercial experiments."
+      "name": "Altair-AC-Modding-Lab",
+      "description": "Research and tooling for modding the original Assassin's Creed game through available modding interfaces and a custom workflow.",
+      "category": "Game modding tools",
+      "default_visibility": "private",
+      "create": true,
+      "readme": "# Altair-AC-Modding-Lab\n\nA fan modding research and tooling project focused on extending the original Assassin's Creed experience using available modding interfaces and workflows.\n\n## Planned areas\n- File and asset-format research\n- Mod packaging and compatibility tooling\n- Configuration and runtime-behavior documentation\n- Engine-aware mod development workflow\n- Testing and versioned mod releases\n\n## Project boundaries\nThis is a modding project, not a claim to own or recreate Ubisoft technology. Do not commit proprietary game binaries or assets. Store original tools, documentation, and user-created work here.\n\n## Status\nResearch and tooling design.\n"
     }
   ]
 }
