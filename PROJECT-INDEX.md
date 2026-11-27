@@ -1,66 +1,61 @@
 # SAGE Master Project Index
 
-**Owner:** [wukong0060](https://github.com/wukong0060)  
-**Reviewed:** 26 November 2026  
-**Repository policy:** Six existing repositories only. No new repositories are to be created for the projects listed here.
+**GitHub owner:** [wukong0060](https://github.com/wukong0060)  
+**Repository policy:** Keep the six verified existing repositories and create a dedicated repository for each distinct planned project listed below.
 
-This is the central map for SAGE's existing codebases and the additional projects discussed in ChatGPT. A project assigned to `SAGE-business` is being tracked as a plan, product specification, or research track there. That does **not** mean a separate application or implementation already exists.
+> Compiled from retained ChatGPT context and recent discussions. This is not a complete export of every conversation. A planned repository is a place for its specifications and future code, not proof that it is already implemented.
 
-## Existing GitHub repositories
+## Existing repositories
 
-| Repository | Role | What belongs here |
+| Repository | Visibility | Responsibility |
 |---|---|---|
-| [S.A.G.E](https://github.com/wukong0060/S.A.G.E) | Core AI platform | Assistant runtime, orchestration, memory, skills, Mail Intelligence integration, voice/perception/HUD modules |
-| [SAGE-business](https://github.com/wukong0060/SAGE-business) | Business and project hub | This index, product specifications, project planning, market research and business experiments |
-| [SAGE-OS-](https://github.com/wukong0060/SAGE-OS-) | Windows platform | PC optimization, customization, diagnostics and safe performance profiles |
-| [SAGE-Droid](https://github.com/wukong0060/SAGE-Droid) | Android platform | Android SAGE, Termux Companion, diagnostics and device modules |
-| [SAGE-Brawlhalla-Trainer](https://github.com/wukong0060/SAGE-Brawlhalla-Trainer) | SAGE FORGE | Brawlhalla trainer, replay review, coaching, training labs and analytics |
-| [Base-SAGE](https://github.com/wukong0060/Base-SAGE) | App-builder platform | Base44-style AI/no-code app-builder competitor |
+| [S.A.G.E](https://github.com/wukong0060/S.A.G.E) | Private | Core AI, orchestration, memory, skills, API, permissions and audit |
+| [SAGE-business](https://github.com/wukong0060/SAGE-business) | Public | Business hub, master index, cross-project planning and business specifications |
+| [SAGE-OS-](https://github.com/wukong0060/SAGE-OS-) | Public | Windows optimization, customization and PC performance tooling |
+| [SAGE-Droid](https://github.com/wukong0060/SAGE-Droid) | Private | Android SAGE platform, Termux Companion and device modules |
+| [SAGE-Brawlhalla-Trainer](https://github.com/wukong0060/SAGE-Brawlhalla-Trainer) | Private | SAGE FORGE, Brawlhalla replay analysis, coaching and training tools |
+| [Base-SAGE](https://github.com/wukong0060/Base-SAGE) | Public | Base44-style AI/no-code app builder platform |
 
-## Project portfolio
+## Planned projects with dedicated repositories
 
-### Core AI and assistant systems
+| Planned repository | Project |
+|---|---|
+| `SAGE-Mail-Intelligence` | Email intelligence for the SAGE ecosystem: Gmail analysis, project monitoring, summaries, and approval-gated drafts. |
+| `SAGE-EventKit` | Premium event toolkit web application for one-time purchases, secure activation, and reusable event deliverables. |
+| `SAGE-Lead-Gen-Studio` | Standalone lead-generation products and business tools designed for useful delivery and one-time sales. |
+| `SAGE-Barber-Template-Studio` | Barbering consultation forms, shop workflows, service menus, price lists, and marketing templates. |
+| `SAGE-Leveling-to-the-West` | Gamified martial arts and fitness progression app with skill paths, training logs, mobility, conditioning, and recovery tracking. |
+| `NOMSHU-DO` | Martial arts learning framework and personal training curriculum documenting fundamentals, principles, progression, and safe practice. |
+| `BLAZEFORCE-Training-System` | Safe conditioning and athletic-development concept focused on fitness tracking, controlled progression, and recovery. |
+| `BBR-X` | Beach Buggy Racing enhancement concept covering Windows delivery, competitive progression, and expanded multiplayer design research. |
+| `NEXUS-Gaming-Platform` | Gaming ecosystem concept combining a unified game library, launcher-style experience, and PC performance tooling. |
+| `SAGE-Gaming-Network-NG` | Nigeria-focused gaming connectivity and network-service concept covering latency measurement, market research, and technical feasibility. |
+| `Altair-AC-Modding-Lab` | Research and tooling for modding the original Assassin's Creed game through available modding interfaces and a custom workflow. |
 
-- **S.A.G.E Core Assistant** → [S.A.G.E](https://github.com/wukong0060/S.A.G.E). Personal AI runtime, orchestration, persistent memory, skills, LLM gateway, local API and permission/audit layer.
-- **SAGE Mail Intelligence** → [S.A.G.E](https://github.com/wukong0060/S.A.G.E). Planned module for read-only Gmail intelligence, project monitoring, thread summaries and approval-gated drafts. It does not get its own repository.
-- **SAGE Droid / Termux Companion** → [SAGE-Droid](https://github.com/wukong0060/SAGE-Droid). Android companion, diagnostics and modular device tooling.
+## Existing project notes
 
-### Operating systems and gaming tools
+- **S.A.G.E:** README documents the core loop, SQLite memory, skill routing, OpenAI gateway, local HTTP API, and permission/audit layer.
+- **SAGE OS:** README documents v3.6.4 Customization Studio and outstanding native Windows validation.
+- **SAGE FORGE:** README documents a staged v9.5.2 source import and explicitly says the full 576-file application source tree is not yet in that branch.
+- **SAGE Droid and Base-SAGE:** Their current README files are minimal and need implementation audits.
 
-- **SAGE OS** → [SAGE-OS-](https://github.com/wukong0060/SAGE-OS-). Windows optimization, customization, PC diagnostics and gaming-performance tooling.
-- **SAGE FORGE / Brawlhalla Trainer** → [SAGE-Brawlhalla-Trainer](https://github.com/wukong0060/SAGE-Brawlhalla-Trainer). Replay analysis, AI coaching research, fundamentals, pro training, movement, dodge/counterplay, edgeguard and weapon labs.
-- **NEXUS Gaming Platform** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Gaming launcher/library platform and PC optimization ecosystem; concept stage.
-- **BBR-X** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Beach Buggy Racing enhancement concept; research and planning only at this stage.
-- **SAGE Gaming Network NG** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Nigeria-focused gaming connectivity concept; feasibility and market research.
+## Repository factory
 
-### App builder and commercial products
+[Open the Create Planned SAGE Project Repositories workflow](https://github.com/wukong0060/SAGE-business/actions/workflows/create-project-repositories.yml)
 
-- **Base-SAGE** → [Base-SAGE](https://github.com/wukong0060/Base-SAGE). Base44-style AI app builder/platform.
-- **SAGE EventKit** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Premium event toolkit with one-time customer purchase and activation.
-- **SAGE Lead Generation Tools** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Small practical lead-generation products.
-- **SAGE Barber Template Studio** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Barber forms, price lists, workflows and digital templates.
-- **SAGE Digital Business Portfolio** → [SAGE-business](https://github.com/wukong0060/SAGE-business). Umbrella for product ideas, launch plans, pricing and distribution.
+The workflow is manual-only. It requires typing `CREATE`, defaults new repositories to private, skips exact-name repositories that already exist, and adds a starter README. It does not modify or delete existing repositories.
 
-### Training, lifestyle and creative projects
+### Required Actions secret
 
-- **SAGE Leveling to the West** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Gamified martial arts and fitness app concept; specifications and design planning live here until implementation is assigned to an existing codebase.
-- **Altair / Assassin's Creed Modding Lab** → [SAGE-business planning](https://github.com/wukong0060/SAGE-business). Research and design for modding the original game through available modding interfaces. No proprietary game binaries or assets should be committed.
-
-## Repository facts and handoff notes
-
-- The S.A.G.E README documents a working core loop, SQLite memory, skill routing, OpenAI gateway, local HTTP API, and permission/audit layer.
-- The SAGE OS README documents the v3.6.4 Customization Studio, while noting that native Windows GUI/build validation remains outstanding.
-- The SAGE FORGE README documents a staged v9.5.2 source import. It explicitly says the full 576-file application source tree is not yet in that GitHub branch.
-- The SAGE Droid and Base-SAGE README files are currently minimal and should be expanded as their current implementation details are reviewed.
-- A repository being used as a planning home is not proof that its planned project is implemented.
+Add `SAGE_REPO_CREATOR_TOKEN` under [SAGE-business Actions secrets](https://github.com/wukong0060/SAGE-business/settings/secrets/actions). Use a fine-grained token owned by `wukong0060` with **Repository creation: write** and **Contents: write** permissions, or a classic token with the required `repo` scope. Never put the token in chat or source files.
 
 ## Operating rules
 
-1. Keep the six repositories. Do not generate a repository per idea.
-2. Put cross-project planning and business specifications in `SAGE-business`.
-3. Keep implementation code in the appropriate existing product repository.
-4. Before moving code or restructuring directories, inspect the actual source tree and preserve history.
-5. Never commit API keys, populated `.env` files, private data, proprietary game binaries/assets, or personal replay recordings.
-6. Update this index when a project is renamed, merged, paused, or moved.
+1. Preserve existing repositories and history.
+2. One distinct planned project gets one dedicated repository.
+3. Shared features remain modules unless separately listed as independent projects.
+4. Use SAGE-business for cross-project planning and coordination.
+5. Never commit API keys, populated `.env` files, personal data, proprietary game binaries/assets, or private replay recordings.
+6. Update this index as project names, scope, status, or repository assignments change.
 
-The structured companion file is [projects.json](./projects.json).
+Structured catalogue: [projects.json](./projects.json).
