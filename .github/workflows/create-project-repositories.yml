@@ -1,0 +1,118 @@
+name: Create planned SAGE project repositories
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type CREATE to confirm creation of all missing planned repositories
+        required: true
+        type: string
+      visibility:
+        description: Visibility for new repositories
+        required: true
+        type: choice
+        options:
+          - private
+          - public
+        default: private
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sage-planned-repository-creation
+  cancel-in-progress: false
+
+jobs:
+  create-planned-repositories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out project catalogue
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Create missing planned repositories
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.SAGE_REPO_CREATOR_TOKEN }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+          VISIBILITY: ${{ inputs.visibility }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$CONFIRMATION" != "CREATE" ]]; then
+            echo "::error::Confirmation must be exactly CREATE."
+            exit 1
+          fi
+
+          if [[ -z "${GH_TOKEN:-}" ]]; then
+            echo "::error::Missing repository secret SAGE_REPO_CREATOR_TOKEN."
+            exit 1
+          fi
+
+          if [[ "$VISIBILITY" != "private" && "$VISIBILITY" != "public" ]]; then
+            echo "::error::Invalid visibility selection."
+            exit 1
+          fi
+
+          owner="$(gh api /user --jq .login)"
+          expected_owner="$(jq -r '.owner' projects.json)"
+          if [[ "$owner" != "$expected_owner" ]]; then
+            echo "::error::The token belongs to '$owner'; this catalogue is configured for '$expected_owner'."
+            exit 1
+          fi
+
+          private_flag=true
+          if [[ "$VISIBILITY" == "public" ]]; then
+            private_flag=false
+          fi
+
+          echo "## SAGE planned repository creation" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Owner: `$owner`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Visibility for new repositories: `$VISIBILITY`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Repository | Result |" >> "$GITHUB_STEP_SUMMARY"
+
+          while IFS= read -r project; do
+            name="$(jq -r '.name' <<< "$project")"
+            description="$(jq -r '.description' <<< "$project")"
+            readme="$(jq -r '.readme' <<< "$project")"
+            url="https://github.com/$owner/$name"
+
+            if gh api "repos/$owner/$name" >/dev/null 2>&1; then
+              echo "| [$name]($url) | Already exists; skipped |" >> "$GITHUB_STEP_SUMMARY"
+              continue
+            fi
+
+            gh api --method POST /user/repos \
+              -f name="$name" \
+              -f description="$description" \
+              -F private="$private_flag" \
+              -F auto_init=true >/dev/null
+
+            for attempt in 1 2 3 4 5; do
+              if gh api "repos/$owner/$name/contents/README.md" --jq .sha > /tmp/readme-sha 2>/dev/null; then
+                break
+              fi
+              sleep 2
+            done
+
+            if [[ ! -s /tmp/readme-sha ]]; then
+              echo "::error::Repository created but README initialization could not be verified for $name."
+              exit 1
+            fi
+
+            readme_sha="$(cat /tmp/readme-sha)"
+            readme_b64="$(printf '%s' "$readme" | base64 -w 0)"
+            gh api --method PUT "repos/$owner/$name/contents/README.md" \
+              -f message="Add project overview" \
+              -f content="$readme_b64" \
+              -f sha="$readme_sha" >/dev/null
+
+            echo "| [$name]($url) | Created |" >> "$GITHUB_STEP_SUMMARY"
+          done < <(jq -c '.planned_repositories[] | select(.create == true)' projects.json)
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Existing repositories were not modified." >> "$GITHUB_STEP_SUMMARY"
