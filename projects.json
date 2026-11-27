@@ -1,7 +1,7 @@
 {
   "owner": "wukong0060",
   "repository_policy": "Keep all existing repositories. Create one separate repository for each distinct planned project listed under planned_repositories. Do not create repositories for modules already assigned to an existing product unless separately listed.",
-  "scope_note": "Compiled from retained ChatGPT project context and recent conversations; may not include every idea from older conversations that is no longer available in retained context.",
+  "scope_note": "Compiled from retained ChatGPT project context and Gmail project correspondence. This is not a complete export of every conversation or attachment. Projects discovered through a source archive or shared-design notification are clearly marked for import/review before implementation claims are made.",
   "existing_repositories": [
     {
       "name": "S.A.G.E",
@@ -128,6 +128,84 @@
       "default_visibility": "private",
       "create": true,
       "readme": "# Altair-AC-Modding-Lab\n\nA fan modding research and tooling project focused on extending the original Assassin's Creed experience using available modding interfaces and workflows.\n\n## Planned areas\n- File and asset-format research\n- Mod packaging and compatibility tooling\n- Configuration and runtime-behavior documentation\n- Engine-aware mod development workflow\n- Testing and versioned mod releases\n\n## Project boundaries\nThis is a modding project, not a claim to own or recreate Ubisoft technology. Do not commit proprietary game binaries or assets. Store original tools, documentation, and user-created work here.\n\n## Status\nResearch and tooling design.\n"
+    },
+    {
+      "name": "SAGE-Business-OS",
+      "description": "SAGE Business OS product and application, with a referenced 7.0.0 production package requiring source verification and import.",
+      "category": "Business operating system",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "A Gmail message references a SAGE Business OS 7.0.0 production archive and companion checksum file.",
+      "readme": "# SAGE Business OS\n\nA dedicated codebase for the SAGE Business OS product. This is distinct from the public SAGE-business project-planning hub.\n\n## Source status\nA Gmail project handoff references a `sage-business-os-7.0.0-production.zip` package and a companion SHA-256 file. The source archive itself has not yet been inspected in this repository.\n\n## First tasks\n- Obtain the original archive from its source location\n- Verify its checksum against the supplied digest\n- Inventory the package and identify the actual application stack\n- Import source without generated secrets, user data, or build caches\n- Document existing features from code and tests, not assumptions\n\n## Status\nSource handoff identified; import and audit required."
+    },
+    {
+      "name": "Sonic-Atlas-Gaming",
+      "description": "Game development project associated with a Sonic Atlas Gaming source archive; original source needs review before its scope can be documented.",
+      "category": "Game development",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "A Gmail message includes a source archive named Sonic_Atlas_Gaming_Source.zip.",
+      "readme": "# Sonic Atlas Gaming\n\nA game-development project identified from a source archive named `Sonic_Atlas_Gaming_Source.zip` in the project handoff.\n\n## Source status\nThe archive has not yet been inspected here, so this README intentionally does not assume its engine, genre, features, or implementation state.\n\n## First tasks\n- Retrieve the original source archive from its source location\n- Inspect the folder tree, licenses, dependencies, and build instructions\n- Identify the actual game concept and technology stack\n- Import clean source files and document reproducible build steps\n- Keep third-party assets and proprietary material out unless their use is authorized\n\n## Status\nSource archive identified; codebase audit required."
+    },
+    {
+      "name": "Shunom-The-Unbound",
+      "description": "Original PC fighting-game project with Shunom as a featured character and a data-driven character, match-session, UI, animation, and rendering architecture.",
+      "category": "Original game development",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "Gmail contains a Shunom: The Unbound character-sheet attachment and a detailed game architecture handoff describing Shunom.cpp and a multi-fighter project.",
+      "readme": "# Shunom: The Unbound\n\nAn original PC fighting-game project associated with the Shunom: The Unbound character sheet and a detailed game-architecture handoff.\n\n## Documented architecture goals\n- Platform-independent match/session configuration\n- Data-driven character, moveset, and move definitions\n- Fictional game-state priority rules for strike, throw, parry, armor, guard, invulnerability, and sidestep\n- Deterministic simulation foundations for online rollback research\n- Animation, camera, HUD, training-mode, audio, and rendering systems\n- A planned multi-character roster, stages, story, arcade, and online modes\n\n## Scope and safety\nAll combat rules here are abstract video-game systems, not real-world fighting instruction. Character moves and effects should remain fictional and animation-driven.\n\n## First tasks\n- Recover and audit the existing source archive/project folder\n- Record current architecture and tested functionality\n- Separate character data from engine systems\n- Create automated simulation and determinism tests\n\n## Status\nExisting project planning and source references identified; full source audit required."
+    },
+    {
+      "name": "GOH-Roblox-Battlegrounds",
+      "description": "Roblox battlegrounds game-design project inspired by God of High School, with ranked PvP, battlegrounds, tournaments, progression, and a full game-design document.",
+      "category": "Roblox game development",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "Gmail contains a detailed game-design inquiry describing a God of High School-inspired Roblox game with Ranked PvP, Battlegrounds, and Tournaments.",
+      "readme": "# GOH Roblox Battlegrounds\n\nA Roblox battlegrounds game-design project inspired by the God of High School series. The concept was documented as a mix of a full game-design document and key-screen mockups.\n\n## Documented design scope\n- Ranked PvP and matchmaking rating\n- Battlegrounds mode rules\n- Tournament brackets and scheduling\n- Character archetypes and a transformation/power system\n- Progression, unlocks, maps, onboarding, parties, and social features\n- HUD, interface, and cosmetic-only monetization direction\n\n## Originality and IP\nTreat this as a design reference until rights are established. Prefer original characters, names, story, art, maps, and effects; do not use protected franchise assets or imply official affiliation without permission.\n\n## First tasks\n- Consolidate the existing game-design conversation and artifacts\n- Establish original-IP scope\n- Define the core game loop and prototype boundaries\n- Build a Roblox Studio prototype with transparent, fair progression\n\n## Status\nDesign brief identified; full GDD and prototype work required."
+    },
+    {
+      "name": "Kotodama-Manga",
+      "description": "Original manga project titled Kotodama, with an existing text manuscript attachment to be organized into a versioned creative-writing workspace.",
+      "category": "Manga and creative writing",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "A Gmail message titled Kotodama labels the project as the user's manga and includes a Kotodama.txt attachment.",
+      "readme": "# Kotodama Manga\n\nA dedicated creative-writing repository for the original manga project titled **Kotodama**.\n\n## First tasks\n- Import and preserve the existing `Kotodama.txt` manuscript\n- Separate premise, setting, cast, arcs, chapters, and continuity notes\n- Track revisions and unresolved story decisions\n- Keep original character, setting, and visual-reference ownership clear\n- Add scripts, thumbnails, and production materials as they are created\n\n## Status\nExisting manuscript reference identified; manuscript import and structure pass required."
+    },
+    {
+      "name": "Chess-Variant-Game",
+      "description": "Game-design research project exploring ways to improve or extend the classic chess experience; the full shared design brief still needs review.",
+      "category": "Board-game design",
+      "default_visibility": "private",
+      "create": true,
+      "gmail_basis": "A Gmail Genspark share notification identifies a project titled Game design inquiry to improve on chess.",
+      "readme": "# Chess Variant Game\n\nA board-game design project exploring ways to improve or extend the classic chess experience.\n\n## Current evidence\nA shared project notification identifies the working brief as `Game design inquiry to improve on chess`. The detailed design artifact has not yet been reviewed in this repository.\n\n## First tasks\n- Retrieve and review the shared design brief\n- Identify the specific problems the new design intends to solve\n- Define rule changes and preserve strategic depth\n- Create a written ruleset and small playable prototype\n- Test clarity, balance, accessibility, and match length\n\n## Status\nConcept identified from a shared project; detailed brief review required."
+    }
+  ],
+  "pending_review_candidates": [
+    {
+      "name": "Teller Town Autumn / Pokken Tournament",
+      "status": "review_before_repository_creation",
+      "reason": "A Gmail note pairs this title with a Pokken tournament reference but contains no project brief, scope, or implementation request. Kept visible here so it is not forgotten, but not automatically queued as a repository."
+    }
+  ],
+  "external_github_invitations": [
+    {
+      "repository": "NIIT-Port-Harcourt/intro-to-git-and-github-KingJin0060",
+      "status": "Gmail invitation notification observed; acceptance and current access not verified",
+      "classification": "external classroom repository, not a new owned project repo"
+    },
+    {
+      "repository": "NIIT-Port-Harcourt/react-dashboard-support-page-KingJin0060",
+      "status": "Gmail invitation notification observed; acceptance and current access not verified",
+      "classification": "external classroom repository, not a new owned project repo"
+    },
+    {
+      "repository": "Teekay-Dev/Bunnix",
+      "status": "Gmail invitation notification observed; acceptance and current access not verified",
+      "classification": "external collaboration repository, not a new owned project repo"
     }
   ]
 }
