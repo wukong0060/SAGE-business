@@ -6,7 +6,11 @@ Central coordination hub for the SAGE ecosystem.
 
 **[Open SAGE Master Project Index](./PROJECT-INDEX.md)**
 
-The index distinguishes six existing repositories from eleven planned projects that each have a dedicated repository entry and starter README queued for creation.
+The current portfolio catalogue contains:
+- 6 existing repositories verified through the connected GitHub owner listing
+- 17 planned project repositories, including additional projects found in Gmail
+- Gmail-only external GitHub invitations, listed separately because ownership and acceptance are not verified
+- One project candidate held for review because its email contains a title/reference but no usable brief
 
 ## Repository Factory
 
@@ -24,9 +28,9 @@ Manual-only workflow. It requires the `SAGE_REPO_CREATOR_TOKEN` Actions secret, 
 
 ## Catalogue files
 
-- [PROJECT-INDEX.md](./PROJECT-INDEX.md): human-readable map of existing and planned repositories.
+- [PROJECT-INDEX.md](./PROJECT-INDEX.md): human-readable map of existing and planned repositories, Gmail discoveries, and external invitations.
 - [projects.json](./projects.json): structured catalogue consumed by the workflow.
 
 ## Scope note
 
-The catalogue is based on project details available in retained ChatGPT context and recent discussions, not a complete account-wide export. A starter repository documents a planned concept; it does not claim that the application is already implemented.
+The catalogue is based on the GitHub account listing, retained ChatGPT context, and Gmail project correspondence reviewed so far. It is not a complete account-wide export. Attachments or shared-project links that could not be inspected are flagged for review. A starter repository documents a planned concept; it does not claim that the application is already implemented.
